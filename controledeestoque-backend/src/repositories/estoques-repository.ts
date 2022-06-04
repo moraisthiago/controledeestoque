@@ -33,6 +33,13 @@ const estoquesRepository = {
             callback(this.changes === 0)
         })
     },
+    apagarTodos: (callback: (notFound: boolean) => void) => {
+        const sql = 'DELETE * FROM estoques'
+        const params: any[] = []
+        database.run(sql, params, function(_err) {
+            callback(this.changes === 0)
+        })
+    },
 }
 
 export default estoquesRepository

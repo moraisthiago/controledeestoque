@@ -28,7 +28,7 @@ function Copyright() {
   );
 }
 
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
+const steps = ['Cadastro de produto', 'Cadastro de estoque'];
 
 function getStepContent(step: number) {
   switch (step) {
