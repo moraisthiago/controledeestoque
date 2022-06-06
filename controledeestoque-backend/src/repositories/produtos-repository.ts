@@ -14,11 +14,6 @@ const produtosRepository = {
         const params: any[] = []
         database.all(sql, params, (_err, rows) => callback(rows))
     },
-    lerTodosPorEstoque: (id: number, callback: (produtos: Produto[]) => void) => {
-        const sql = 'SELECT * FROM produtos WHERE id_estoque = ?'
-        const params = [id]
-        database.all(sql, params, (_err, rows) => callback(rows))
-    },
     ler: (id: number, callback: (produto?: Produto) => void) => {
         const sql = 'SELECT * FROM produtos WHERE id_produto = ?'
         const params = [id]

@@ -66,13 +66,6 @@ export default function Estoques() {
         alert('Registro apagado com sucesso!');
         })};
 
-  const handleEdit = (id: number) => {
-    axios.get(`http://localhost:4000/api/estoques/${id}`)
-    .then(result => {
-      console.log(result.data)
-    });
-  }
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -123,9 +116,6 @@ export default function Estoques() {
                   <CardActions>
                     <Grid item xs={3} sm={3} md={3}>
                     <Button size="small" onClick={() => navigate(`/produtos`)} >Abrir</Button>
-                    </Grid>
-                    <Grid item xs={3} sm={3} md={3}>
-                    <Button size="small" onClick={() => handleEdit(card.id_estoque)} >Editar</Button>
                     </Grid>
                     <Grid item xs={6} sm={6} md={6}>
                     <Button size="small" onClick={() => handleDelete(card.id_estoque)} >Excluir</Button>

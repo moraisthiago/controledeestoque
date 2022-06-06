@@ -3,7 +3,6 @@ type Produto = {
     nome: string
     descricao: string
     quantidade: number
-    id_estoque?: number
 }
 
 export default Produto

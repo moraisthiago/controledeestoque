@@ -116,9 +116,6 @@ export default function Produtos() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Grid item xs={4} sm={4} md={4}>
-                    <Button size="small">Editar</Button>
-                    </Grid>
                     <Grid item xs={8} sm={8} md={8}>
                     <Button size="small" onClick={() => handleDelete(card.id_produto)} >Excluir</Button>
                     </Grid>

@@ -14,8 +14,7 @@ const SQL_PRODUTOS_CREATE =
         id_table INTEGER PRIMARY KEY AUTOINCREMENT,
         nome TEXT,
         descricao TEXT,
-        quantidade INTEGER,
-        id_estoque INTEGER
+        quantidade INTEGER
     )`
 
 const SQL_TABLES_CREATE = [
@@ -23,14 +22,14 @@ const SQL_TABLES_CREATE = [
         id_estoque INTEGER PRIMARY KEY AUTOINCREMENT,
         nome TEXT,
         descricao TEXT
-    )`,
+    );`,
+
     `CREATE TABLE produtos (
-        id_table INTEGER PRIMARY KEY AUTOINCREMENT,
+        id_produto INTEGER PRIMARY KEY AUTOINCREMENT,
         nome TEXT,
         descricao TEXT,
-        quantidade INTEGER,
-        id_estoque INTEGER
-    )`
+        quantidade INTEGER
+    );`
 ]
 
 const database = new sqlite3.Database(DBSOURCE, (err) => {
@@ -39,12 +38,13 @@ const database = new sqlite3.Database(DBSOURCE, (err) => {
         throw err
     } else {
         console.log('Base de dados conectada com sucesso.')
-        for (var table in SQL_TABLES_CREATE){
-            database.run(SQL_TABLES_CREATE[table], (err) => {
+        for (var table of SQL_TABLES_CREATE){
+            database.run(table, (err) => {
                 if (err) {
                     // Possivelmente a tabela já foi criada
+                    console.log(err)
                 } else {
-                    console.log('Tabela criada.')
+                    console.log(table)
                 }
             })
         }
