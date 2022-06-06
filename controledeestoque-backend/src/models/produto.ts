@@ -1,9 +1,9 @@
 type Produto = {
-    id?: number
+    id_produto?: number
     nome: string
     descricao: string
-    preco: number
     quantidade: number
+    id_estoque?: number
 }
 
 export default Produto

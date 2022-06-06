@@ -1,9 +1,9 @@
-import Checkout from "./components/Checkout";
-import Dashboard from './components/Dashboard'
+import { AppRoutes } from './routes/Routes';
+
 export const App = () => {
   return (
     <div className="App">
-      <Dashboard />
+      <AppRoutes />
     </div>
   );
 }

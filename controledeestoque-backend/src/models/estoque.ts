@@ -1,5 +1,5 @@
 type Estoque = {
-    id?: number
+    id_estoque?: number
     nome: string
     descricao: string
 }

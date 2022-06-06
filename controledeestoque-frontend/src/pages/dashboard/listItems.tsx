@@ -8,13 +8,13 @@ import ExitToAppTwoToneIcon from '@mui/icons-material/ExitToAppTwoTone';
 
 export const mainListItems = (
   <React.Fragment>
-    <ListItemButton>
+    <ListItemButton href="/dashboard">
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton href="/estoques">
       <ListItemIcon>
         <InventoryRoundedIcon />
       </ListItemIcon>

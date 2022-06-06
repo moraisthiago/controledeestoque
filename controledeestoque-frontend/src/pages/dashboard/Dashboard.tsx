@@ -16,7 +16,7 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { mainListItems, secondaryListItems } from './listItems';
-import Orders from './Orders';
+import ListaEstoques from '../estoques/ListaEstoques';
 
 function Copyright(props: any) {
   return (
@@ -157,10 +157,9 @@ function DashboardContent() {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-              {/* Recent Orders */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <Orders />
+                  <ListaEstoques />
                 </Paper>
               </Grid>
             </Grid>

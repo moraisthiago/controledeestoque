@@ -33,6 +33,18 @@ produtosRouter.get('/produtos/:id', (req, res) => {
     })
 })
 
+produtosRouter.get('/estoques/:id/produtos/', (req, res) => {
+    const id: number = +req.params.id
+
+    produtosRepository.lerTodosPorEstoque(id, (item) => {
+        if (item) {
+            res.json(item)
+        } else {
+            res.status(404).send()
+        }
+    })
+})
+
 produtosRouter.put('/produtos/:id', (req, res) => {
     const id: number = +req.params.id
 
